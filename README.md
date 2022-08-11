@@ -6,9 +6,8 @@ Deployment URL:
 
 ## Credit
 Keith Gray: https://github.com/actionboy6
-Caavan Mulvihill: 
+Caavan Mulvihill: https://github.com/Mahoroa2011
 
-Testing github
 ## Features
 CSS Framework:
 https://tailwindcss.com
