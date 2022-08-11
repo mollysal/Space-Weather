@@ -6,12 +6,15 @@ Deployment URL:
 
 ## Credit
 Keith Gray: https://github.com/actionboy6
-Caavan Mulvihill: 
 
-Testing github
+Caavan Mulvihill: https://github.com/Mahoroa2011
+
+
 ## Features
 CSS Framework:
 https://tailwindcss.com
+
+Java
 
 ## APIs
 https://thespacedevs.com/llapi
