@@ -8,7 +8,7 @@ As a space nerd // I want to be able to see where space launch locations & be ab
 ## Credit
 Keith Gray: https://github.com/actionboy6
 
-Caavan Mulvihill: https://github.com/Mahoroa2011
+Cavan Mulvihill: https://github.com/Mahoroa2011
 
 Molly Salmonson: https://github.com/mollysal
 ## Features
