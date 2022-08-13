@@ -22,19 +22,21 @@
     <!-- Body -->
     <!-- Two columns -->
     <div class="flex flex-wrap -mb-4">
-        <!-- Weather Container -->
-        <div class="w-1/3 bg-gray-400 p-4 text-center " id="weatherInfo">
+        <!-- Search Container -->
+        <div class="w-1/3 bg-gray-400 p-4 text-center" id="searchInfo">
+            <label for="site-search">Search by Country:</label>
+            <input type="search" id="site-search" name="q">
+            <button>Search</button>
         </div>
         <!-- Space Container -->
         <div class="w-2/3 bg-gray-500 p-4 text-center " id="spaceInfo">
         </div>
     </div>
-    <header>
-        <h1>Space & Weather</h1>
-        <h2>Welcome to our website!</h2>
-    </header>
 
+
+    <!-- Added link to the jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="Resources/Javascript/script.js"></script>
 </body>
-<script src="Resources\Javascript\script.js"></script>
-</body>
+
 </html>
