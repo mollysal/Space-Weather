@@ -17,3 +17,10 @@ function getAPI() {
 }
 
 getAPI();
+
+//When a user types in the Country code (i.e. USA) a bunch of cards populate with space launches in that country
+//when a user clicks on a launch location, the weather populates 
+
+//Variables
+
+var searchInfo = $('#searchInfo'); 
