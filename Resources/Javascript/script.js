@@ -1,4 +1,5 @@
 //Variables
+//Variables Base HTML
 var searchSection = document.querySelector('#searchSection'); 
 var searchInput = document.querySelector('#searchInput');
 var searchBtn = document.querySelector('#searchBtn');
@@ -13,6 +14,8 @@ let formSubmitHandler = function(e) {
   e.preventDefault();
   let countryName = searchInput.value.trim();
   searchInput.value = "";
+  //Clearing the results section each time there's a search
+  resultsSection.innerHTML = "";
 
   if (countryName) {
     getSpaceAPI(countryName);
@@ -44,6 +47,7 @@ function getSpaceAPI(countryName) {
         var listItem = document.createElement('div');
         listItem.className = "card py-3";
         listItem.setAttribute("id","card"+i);
+        listItem.setAttribute("data-location", data.results[i].url);
         listItem.textContent = data.results[i].name;
         resultsSection.appendChild(listItem);
         console.log(data.results[i].name);
@@ -55,9 +59,25 @@ getSpaceAPI();
 
 
 //when a user clicks on a launch location, the weather populates 
+//How do we target each card element created?
 
+let formSubmitLocation = function(e) {
+  e.preventDefault();
+  if (e.target.matches(".card")) {
+    //Fetch to run data-location attribute
 
+    //return lat & long
+
+    //run lat & lon through weather API
+
+    //Print weather inside of card
+    
+    
+  }
+}
 
 //Event Listners
 searchBtn.addEventListener("click", formSubmitHandler);
-//searchBtn.on("click", getSpaceAPI);
+//Cards don't exist so we can only add an event listner to the results section
+resultsSection.addEventListener("click", formSubmitLocation);
+
