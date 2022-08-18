@@ -45,7 +45,7 @@ function getSpaceAPI(countryName) {
       for (var i = 0; i < data.results.length; i++) {
         //create element - a HTML element only
         var listItem = document.createElement('div');
-        listItem.className = "card py-3";
+        listItem.className = "card p-2 my-3 has-background-primary has-text-centered";
         listItem.setAttribute("id", "card" + i);
         listItem.setAttribute("data-location", data.results[i].url);
         listItem.textContent = data.results[i].name;
@@ -97,20 +97,32 @@ let formSubmitLocation = function (e) {
         //Clearing out Results Section to make room for Weather
         resultsSection.innerHTML = "";
 
+        //Creating a Div for all of the results based on the element clicked
         var weatherInfo = document.createElement('div');
-        weatherInfo.className = "box-color";
-        weatherInfo.textContent = locationName + " weather: " + data.current.temp + " °F";
+        weatherInfo.className = "box-color has-text-centered content is-medium";
+
+        var weatherInfoName = document.createElement('h1')
+        weatherInfoName.textContent = locationName
+
+        var weatherInfoTemp = document.createElement('h4')
+        weatherInfoTemp.textContent =  "Current Temperature: " + data.current.temp + " °F";
+        var weatherInfoDesc = document.createElement('h4')
+        weatherInfoDesc.textContent = "Description: " + data.current.weather[0].description;
 
         var weatherInfoImg = document.createElement('img');
         weatherInfoImg.src = spaceImg;
 
         var wikiLink = document.createElement('a');
+        wikiLink.className = "has-text-weight-semibold"
         wikiLink.textContent = "Learn More about this space launch here!"
         wikiLink.href = wiki;
         //Opens in New Page:
         wikiLink.target = "_blank"
 
         //Appending (inner to outer)
+        weatherInfo.appendChild(weatherInfoName);
+        weatherInfo.appendChild(weatherInfoTemp);
+        weatherInfo.appendChild(weatherInfoDesc);
         weatherInfo.appendChild(weatherInfoImg);
         weatherInfo.appendChild(wikiLink);
         resultsSection.appendChild(weatherInfo);
