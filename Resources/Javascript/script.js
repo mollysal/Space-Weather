@@ -60,11 +60,10 @@ getSpaceAPI();
 //How do we target each card element created?
 
 let formSubmitLocation = function (e) {
-  e.preventDefault();
 
   //Stephen said everything goes inside this if statement for weather
   if (e.target.matches(".card")) {
-
+    e.preventDefault();
     var dataUrl = e.target.getAttribute("data-location");
 
     //Fetch to run data-location attribute
@@ -76,7 +75,8 @@ let formSubmitLocation = function (e) {
       let lon = (data.pads[0].longitude)
       console.log(lat + ", " + lon);
 
-
+      //Getting elements to print in results section
+      let locationName = data.name;
       let spaceImg = (data.pads[0].map_image);
       let wiki = (data.pads[0].wiki_url);
 
@@ -99,23 +99,21 @@ let formSubmitLocation = function (e) {
 
         var weatherInfo = document.createElement('div');
         weatherInfo.className = "box-color";
-        weatherInfo.textContent = countryName + " weather: " +  data.current.temp + " °F";
-
+        weatherInfo.textContent = locationName + " weather: " + data.current.temp + " °F";
 
         var weatherInfoImg = document.createElement('img');
         weatherInfoImg.src = spaceImg;
 
         var wikiLink = document.createElement('a');
         wikiLink.textContent = "Learn More about this space launch here!"
-        //wikiLink.href = wiki;
-        wikiLink.href = "https://www.google.com/"
+        wikiLink.href = wiki;
         //Opens in New Page:
         wikiLink.target = "_blank"
 
-        //Appending
-        resultsSection.appendChild(weatherInfo);
+        //Appending (inner to outer)
         weatherInfo.appendChild(weatherInfoImg);
         weatherInfo.appendChild(wikiLink);
+        resultsSection.appendChild(weatherInfo);
 
       })
     })
