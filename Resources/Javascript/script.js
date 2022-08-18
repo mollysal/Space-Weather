@@ -9,11 +9,11 @@ var apiKey = '91490289d3ed1657769e6fb58b8a3895';
 
 //------------------------------------------- FUNCTIONS ------------------------------------------- //
 //When a user types in the Country code (i.e. USA) a bunch of cards populate with space launches in that country
+let countryName = "";
 
 let formSubmitHandler = function (e) {
   e.preventDefault();
-  let countryName = searchInput.value.trim();
-  //searchInput.value = "";
+  countryName = searchInput.value.trim();
 
   //Clearing the results section each time there's a search
   resultsSection.innerHTML = "";
@@ -30,14 +30,10 @@ let formSubmitHandler = function (e) {
   }
 }
 
-let countryName = searchInput.value;
-console.log("After Let: " + countryName);
-
 function getSpaceAPI(countryName) {
   //Example from Stephen: https://lldev.thespacedevs.com/2.2.0/location/?search=usa
   var url = "https://lldev.thespacedevs.com/2.2.0/location/?search=" + countryName;
   //hook: ?search=usa"
-  console.log("From API " + countryName);
 
   fetch(url)
     .then(function (response) {
@@ -80,7 +76,7 @@ let formSubmitLocation = function (e) {
       let lon = (data.pads[0].longitude)
       console.log(lat + ", " + lon);
 
-      
+
       let spaceImg = (data.pads[0].map_image);
       let wiki = (data.pads[0].wiki_url);
 
@@ -103,18 +99,24 @@ let formSubmitLocation = function (e) {
 
         var weatherInfo = document.createElement('div');
         weatherInfo.className = "box-color";
-        weatherInfo.textContent = data.current.temp + " °F";
-        resultsSection.appendChild(weatherInfo);
+        weatherInfo.textContent = countryName + " weather: " +  data.current.temp + " °F";
 
-        var weatherInfoImg = document.createElement('div');
+
+        var weatherInfoImg = document.createElement('img');
         weatherInfoImg.src = spaceImg;
-        weatherInfo.appendChild(weatherInfoImg + "Adding Image");
 
         var wikiLink = document.createElement('a');
-        wikiLink.href = wiki;
-        weatherInfo.appenedchid("Wikik Link: " + wikiLink);
-  
-      
+        wikiLink.textContent = "Learn More about this space launch here!"
+        //wikiLink.href = wiki;
+        wikiLink.href = "https://www.google.com/"
+        //Opens in New Page:
+        wikiLink.target = "_blank"
+
+        //Appending
+        resultsSection.appendChild(weatherInfo);
+        weatherInfo.appendChild(weatherInfoImg);
+        weatherInfo.appendChild(wikiLink);
+
       })
     })
       .catch(function (error) {
