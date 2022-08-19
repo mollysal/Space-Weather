@@ -1,19 +1,20 @@
+/* font applies to all text */
 * {
     font-family: 'Poppins', sans-serif;
 }
-
+/* this applies to the space image */
 .hero {
     background-image: url("https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+/* Text color and placement for title class */
 .title {
     flex-direction: wrap;
     color: #fff;
     padding-left: 2%
 }
-
+/* Text color and placement for subtitle class and giving it enough space from title class */
 .subtitle {
     border-radius: 25px;
     padding: 2%;
