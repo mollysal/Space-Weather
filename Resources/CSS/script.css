@@ -10,33 +10,15 @@
 
 .title {
     flex-direction: wrap;
-    background-color: #87C1FF;
-    text-decoration-color: #fff;
+    color: #fff;
+    padding: 2.5%
 }
 
 .subtitle {
     border-radius: 25px;
     padding: 2.5%;
-    background-color: #87C1FF;
     color: #fff;
     width: 400px;
     height: 75px;
     font-size: 200%;
-}
-
-h3 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 1%;
-
-}
-
-h4 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 1%;
-    color: #fff;
-    
 }
