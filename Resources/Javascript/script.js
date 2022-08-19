@@ -82,6 +82,7 @@ let formSubmitLocation = function (e) {
 
       //taking the space API Location Lat & Lon into weather API
       let apiUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&units=imperial&appid=' + apiKey;
+      console.log(apiUrl);
 
       fetch(apiUrl).then(function (res) {
         if (res.ok) {
@@ -130,7 +131,7 @@ let formSubmitLocation = function (e) {
       })
     })
       .catch(function (error) {
-        console.log("ERROR with Weather API");
+        console.log("ERROR with Space API going to Weather API");
         return;
       })
   }
