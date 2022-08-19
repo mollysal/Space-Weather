@@ -73,7 +73,7 @@ let formSubmitLocation = function (e) {
       //return lat & long
       let lat = (data.pads[0].latitude);
       let lon = (data.pads[0].longitude)
-      console.log(lat + ", " + lon);
+      // console.log(lat + ", " + lon);
 
       //Getting elements to print in results section
       let locationName = data.name;
@@ -82,18 +82,18 @@ let formSubmitLocation = function (e) {
 
       //taking the space API Location Lat & Lon into weather API
       let apiUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&units=imperial&appid=' + apiKey;
-
+      // console.log(apiUrl);
       fetch(apiUrl).then(function (res) {
+        // console.log(res);
         if (res.ok) {
           return res.json();
-          console.log("json returned");
+          // console.log("json returned");
         } else {
           alert("Uh-oh Something went wrong!");
         }
         //If the results are valid display the weather
       }).then(function (data) {
         //Displaying Weather & Other Location Info after clicking on the location card
-
         //Clearing out Results Section to make room for Weather
         resultsSection.innerHTML = "";
 
