@@ -2,18 +2,19 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body {
+.hero {
     background-image: url("https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg");
-    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-h1 {
+.title {
     flex-direction: wrap;
     background-color: #87C1FF;
     text-decoration-color: #fff;
 }
 
-h2 {
+.subtitle {
     border-radius: 25px;
     padding: 2.5%;
     background-color: #87C1FF;
